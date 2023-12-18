@@ -16,6 +16,10 @@ log.basicConfig(level=log.INFO)
 METERS_TO_KM = 1 / 1000
 DEFAULT_MPH = 30
 
+hwy_speeds = {'motorway': 100,
+              'trunk': 100,
+              'residential': 60,
+              'tertiary': 60}
 
 class NetworkType(Enum):
     """
@@ -89,7 +93,7 @@ def parse_osmnx_graph(
     else:
         crs = LATLON_CRS
 
-    g = ox.add_edge_speeds(g)
+    g = ox.add_edge_speeds(g, hwy_speeds=hwy_speeds)
     g = ox.add_edge_travel_times(g)
 
     length_meters = nx.get_edge_attributes(g, "length")

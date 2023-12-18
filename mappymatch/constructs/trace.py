@@ -13,7 +13,6 @@ from pyproj import CRS
 from mappymatch.constructs.coordinate import Coordinate
 from mappymatch.utils.crs import LATLON_CRS, XY_CRS
 
-
 class Trace:
     """
     A Trace is a collection of coordinates that represents a trajectory to be matched.

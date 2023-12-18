@@ -7,7 +7,6 @@ import pandas as pd
 from mappymatch.constructs.match import Match
 from mappymatch.constructs.road import Road
 
-
 @dataclass
 class MatchResult:
     matches: List[Match]
