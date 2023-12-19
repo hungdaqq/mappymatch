@@ -54,7 +54,7 @@ def nx_graph_from_osmnx(
         raise MapException(
             "osmnx is not installed but is required for this map type"
         )
-    ox.settings.log_console = False
+    ox.settings.log_console = True
 
     raw_graph = ox.graph_from_polygon(
         geofence.geometry, network_type=network_type.value
